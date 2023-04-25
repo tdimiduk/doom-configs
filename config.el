@@ -35,6 +35,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setenv "PATH" (concat (getenv "PATH") ":~/.cabal/bin"))
+(setq exec-path (append exec-path '("~/.cabal/bin")))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -54,4 +56,4 @@
 ;; they are implemented.
 
 (after!
-  setq lsp-haskell-formatting-provider "brittany")
+  setq lsp-haskell-formatting-provider "ormolu")
